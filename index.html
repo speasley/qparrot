@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Redirecting...</title>
-  <meta http-equiv="refresh" content="0; URL=https://cueparrot.com">
+  <meta http-equiv="refresh" content="0; url=https://cueparrot.com" />
+  <style>
+    p {
+      font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+      font-size: 10px;
+      opacity: 0;
+      transition: opacity 300ms ease;
+    }
+    p.visible {
+      opacity: 1;
+    }
+  </style>
 </head>
 <body>
-  <p>If you are not redirected to CueParrot automatically, <a href="https://cueparrot.com">click here</a>.</p>
+  <p id="redirect-text">
+    If you are not redirected to CueParrot automatically, <a href="https://cueparrot.com">click here</a>.
+  </p>
+
+  <script>
+    setTimeout(() => {
+      const text = document.getElementById('redirect-text');
+      text.classList.add('visible');
+    }, 3000);
+  </script>
 </body>
 </html>
